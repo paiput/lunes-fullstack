@@ -21,7 +21,7 @@ const Form = ({ setTasks }) => {
     return(
         <form onSubmit={handleSubmit}>
             <input value={newTitle} type="text" onChange={handleChange} ></input>
-            <button>Guardar</button>
+            <input type="submit" value="Guardar"></input>
         </form>
     );
 };
