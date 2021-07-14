@@ -13,7 +13,10 @@ const Task = ({ title, done }) => {
 
     return (
         <li>
-            <h2 style={style}>{title}</h2>
+            <h2 style={style}>
+                {title}
+                <button className="delete-button">X</button>
+            </h2>
             {done
               ? <input type="checkbox" onClick={toggleChecked} defaultChecked></input>
               : <input type="checkbox" onClick={toggleChecked} ></input>
