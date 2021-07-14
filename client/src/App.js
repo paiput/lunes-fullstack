@@ -31,11 +31,15 @@ function App() {
     setTasks(prevTasks => prevTasks.concat(newTask))
   }
 
+  const deleteTask = (id) => {
+    setTasks(tasks.filter(task => task._id !== id));
+  }
+
   return (
     <div className="App">
       <h1>Todo list</h1>
       <Form addTask={addTask} />
-      <Tasks tasks={tasks} />
+      <Tasks tasks={tasks} deleteTask={deleteTask} />
     </div>
   );
 }
