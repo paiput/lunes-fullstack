@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const Form = ({ setTasks }) => {
+const Form = ({ addTask }) => {
     const [newTitle, setNewTitle] = useState('');
 
     const handleChange = (e) => {
@@ -12,9 +12,9 @@ const Form = ({ setTasks }) => {
         const newTask = {
             title: newTitle,
             done: false,
-            _id: Math.random() * 1000
+            _id: Math.round(Math.random()*1000)
         }
-        setTasks(prevTasks => prevTasks.concat(newTask));
+        addTask(newTask);
         setNewTitle('');
     };
 

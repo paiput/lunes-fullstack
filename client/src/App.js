@@ -26,10 +26,15 @@ function App() {
       setTasks(someTasks);
   }, []);
 
+  // helpers
+  const addTask = (newTask) => {
+    setTasks(prevTasks => prevTasks.concat(newTask))
+  }
+
   return (
     <div className="App">
       <h1>Todo list</h1>
-      <Form setTasks={setTasks} />
+      <Form addTask={addTask} />
       <Tasks tasks={tasks} />
     </div>
   );
